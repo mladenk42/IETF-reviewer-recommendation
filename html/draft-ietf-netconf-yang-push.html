@@ -1,0 +1,445 @@
+
+<!-- saved from url=(0070)http://tuga.takelab.fer.hr:50000/html/draft-ietf-payload-rtp-ttml.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+table td:nth-child(1) { text-align: end; }
+</style>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;  
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+/*input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}*/
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+textarea {
+  background-color: #f1f1f1;
+  width: 50%;
+}
+
+button[class=savebutton] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  border: 1px solid transparent;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  /*top: 100%;
+  left: 0;
+  right: 0;*/
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
+
+  </head><body><datalist id="slideropts">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  </datalist>
+
+  
+   <h2>Subscription to YANG Notifications for Datastore Updates (<a target='_blank' href='https://datatracker.ietf.org/doc/draft-ietf-netconf-yang-push/'>draft-ietf-netconf-yang-push</a>)</h2><div style='width:1000px;white-space: pre-wrap;'>This document describes a mechanism that allows subscriber applications to request a continuous and customized stream of updates from a YANG datastore.  Providing such visibility into updates enables new capabilities based on the remote mirroring and monitoring of configuration and operational state.</div><br>
+
+
+  <table style="width:100%;">
+  <tbody><tr>
+    <th style="width:25%; text-align: end;"></th>
+    <th style="width:70%; text-align:left;">Are the following people suitable to review this draft?</th>
+  </tr>
+
+  <tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/janl@tail-f.com' methods='lt'>Jan Lindblad</a> (janl@tail-f.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119453" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119453">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119453'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119453"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/hilarie@purplestreak.com' methods='t'>Hilarie Orman</a> (hilarie@purplestreak.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL9645" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP9645">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM9645'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM9645"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/jrmitche@puck.nether.net' methods='lt'>Jon Mitchell</a> (jrmitche@puck.nether.net) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL113629" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP113629">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM113629'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM113629"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/sra@hactrn.net' methods='lt'>Rob Austein</a> (sra@hactrn.net) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL104212" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP104212">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM104212'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM104212"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/andy@yumaworks.com' methods='lt'>Andy Bierman</a> (andy@yumaworks.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL8244" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP8244">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM8244'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM8244"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/jclarke@cisco.com' methods='lt'>Joe Clarke</a> (jclarke@cisco.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL113086" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP113086">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM113086'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM113086"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/tbray@textuality.com' methods='l'>Tim Bray</a> (tbray@textuality.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL106769" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP106769">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM106769'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM106769"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/kwatsen@juniper.net' methods='lt'>Kent Watsen</a> (kwatsen@juniper.net) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL112548" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP112548">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM112548'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM112548"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/mjethanandani@gmail.com' methods='lt'>Mahesh Jethanandani</a> (mjethanandani@gmail.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL107859" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP107859">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM107859'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM107859"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/sandy@tislabs.com' methods='t'>Sandra L. Murphy</a> (sandy@tislabs.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL13219" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP13219">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM13219'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM13219"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/daniel.migault@ericsson.com' methods='t'>Daniel Migault</a> (daniel.migault@ericsson.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL109969" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP109969">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM109969'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM109969"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/dhruv.ietf@gmail.com' methods='l'>Dhruv Dhody</a> (dhruv.ietf@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL111477" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP111477">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM111477'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM111477"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/takeshi_takahashi@nict.go.jp' methods='lt'>Takeshi Takahashi</a> (takeshi_takahashi@nict.go.jp) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL111986" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP111986">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM111986'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM111986"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/j.schoenwaelder@jacobs-university.de' methods='l'>Jürgen Schönwälder</a> (j.schoenwaelder@jacobs-university.de) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL21106" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP21106">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM21106'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM21106"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/frost@mm.st' methods='t'>Dan Frost</a> (frost@mm.st) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL110582" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP110582">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM110582'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM110582"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/bclaise@cisco.com' methods='lt'>Benoît Claise</a> (bclaise@cisco.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105682" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105682">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105682'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105682"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/stpeter@stpeter.im' methods='l'>Peter Saint-Andre</a> (stpeter@stpeter.im) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105907" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105907">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105907'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105907"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/yingzhen.ietf@gmail.com' methods='l'>Yingzhen Qu</a> (yingzhen.ietf@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL116337" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP116337">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM116337'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM116337"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/a@ackl.io' methods='l'>Alexander Pelov</a> (a@ackl.io) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119881" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119881">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119881'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119881"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/rdd@cert.org' methods='t'>Roman Danyliw</a> (rdd@cert.org) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105815" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105815">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105815'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105815"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/exa@arrcus.com' methods='l'>Ebben Aries</a> (exa@arrcus.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL117448" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP117448">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM117448'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM117448"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/mersue@gmail.com' methods='lt'>Mehmet Ersue</a> (mersue@gmail.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105537" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105537">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105537'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105537"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/ivandean@gmail.com' methods='l'>Dean Bogdanović</a> (ivandean@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL117563" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP117563">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM117563'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM117563"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/lhotka@nic.cz' methods='lt'>Ladislav Lhotka</a> (lhotka@nic.cz) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL107983" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP107983">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM107983'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM107983"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/jouni.nospam@gmail.com' methods='t'>Jouni Korhonen</a> (jouni.nospam@gmail.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL109800" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP109800">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM109800'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM109800"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/prz@juniper.net' methods='l'>Tony Przygienda</a> (prz@juniper.net) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL104151" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP104151">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM104151'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM104151"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/kaduk@mit.edu' methods='t'>Benjamin Kaduk</a> (kaduk@mit.edu) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL115214" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP115214">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM115214'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM115214"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/allison.mankin@gmail.com' methods='t'>Allison Mankin</a> (allison.mankin@gmail.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL114505" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP114505">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM114505'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM114505"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/christian@amsuess.com' methods='l'>Christian Amsüss</a> (christian@amsuess.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL122861" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP122861">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM122861'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM122861"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/bill.wu@huawei.com' methods='lt'>Qin Wu</a> (bill.wu@huawei.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL112751" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP112751">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM112751'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM112751"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/agmalis@gmail.com' methods='l'>Andrew G. Malis</a> (agmalis@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL3844" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP3844">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM3844'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM3844"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/krose@krose.org' methods='t'>Kyle Rose</a> (krose@krose.org) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119463" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119463">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119463'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119463"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/rkrejci@cesnet.cz' methods='lt'>Radek Krejčí</a> (rkrejci@cesnet.cz) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL122627" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP122627">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM122627'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM122627"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/henk.birkholz@sit.fraunhofer.de' methods='t'>Henk Birkholz</a> (henk.birkholz@sit.fraunhofer.de) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL117723" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP117723">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM117723'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM117723"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/wangzitao@huawei.com' methods='lt'>Zitao Wang</a> (wangzitao@huawei.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL118146" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP118146">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM118146'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM118146"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/francesca.palombini@ericsson.com' methods='t'>Francesca Palombini</a> (francesca.palombini@ericsson.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119822" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119822">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119822'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119822"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/mvasko@cesnet.cz' methods='lt'>Michal Vaško</a> (mvasko@cesnet.cz) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL128240" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP128240">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM128240'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM128240"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/stewart.bryant@gmail.com' methods='lt'>Stewart Bryant</a> (stewart.bryant@gmail.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL2329" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP2329">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM2329'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM2329"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/leeyoung@huawei.com' methods='t'>Young Lee</a> (leeyoung@huawei.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL118347" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP118347">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM118347'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM118347"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/pthubert@cisco.com' methods='t'>Pascal Thubert</a> (pthubert@cisco.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL115824" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP115824">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM115824'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM115824"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/ogud@ogud.com' methods='t'>Ólafur Guðmundsson</a> (ogud@ogud.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL3760" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP3760">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM3760'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM3760"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/worley@ariadne.com' methods='t'>Dale R. Worley</a> (worley@ariadne.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL15979" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP15979">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM15979'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM15979"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/jri.ietf@gmail.com' methods='l'>Jana Iyengar</a> (jri.ietf@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105721" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105721">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105721'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105721"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/yaronf.ietf@gmail.com' methods='t'>Yaron Sheffer</a> (yaronf.ietf@gmail.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL104278" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP104278">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM104278'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM104278"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/shares@ndzh.com' methods='lt'>Susan Hares</a> (shares@ndzh.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL3056" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP3056">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM3056'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM3056"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/Francis.Dupont@fdupont.fr' methods='l'>Francis Dupont</a> (Francis.Dupont@fdupont.fr) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL106670" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP106670">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM106670'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM106670"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/rwilton@cisco.com' methods='lt'>Robert Wilton</a> (rwilton@cisco.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119066" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119066">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119066'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119066"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/evyncke@cisco.com' methods='t'>Éric Vyncke</a> (evyncke@cisco.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105099" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105099">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105099'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105099"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/gih@apnic.net' methods='t'>Geoff Huston</a> (gih@apnic.net) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL106925" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP106925">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM106925'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM106925"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/nico@cryptonector.com' methods='l'>Nicolás Williams</a> (nico@cryptonector.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL112403" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP112403">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM112403'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM112403"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/ravis@juniper.net' methods='l'>Ravi Singh</a> (ravis@juniper.net) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL115009" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP115009">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM115009'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM115009"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/martin.h.duke@gmail.com' methods='t'>Martin Duke</a> (martin.h.duke@gmail.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL106541" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP106541">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM106541'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM106541"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/adrian@olddog.co.uk' methods='t'>Adrian Farrel</a> (adrian@olddog.co.uk) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL104198" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP104198">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM104198'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM104198"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/elwynd@dial.pipex.com' methods='t'>Elwyn B. Davies</a> (elwynd@dial.pipex.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL101858" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP101858">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM101858'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM101858"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/daniele.ceccarelli@ericsson.com' methods='lt'>Daniele Ceccarelli</a> (daniele.ceccarelli@ericsson.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL109703" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP109703">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM109703'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM109703"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/wes@mti-systems.com' methods='lt'>Wesley Eddy</a> (wes@mti-systems.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL110856" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP110856">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM110856'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM110856"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/pbrisset@cisco.com' methods='l'>Patrice Brissette</a> (pbrisset@cisco.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL118335" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP118335">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM118335'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM118335"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/acee@cisco.com' methods='l'>Acee Lindem</a> (acee@cisco.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL10784" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP10784">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM10784'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM10784"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/bwietf@bwijnen.net' methods='lt'>Bert Wijnen</a> (bwietf@bwijnen.net) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL6842" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP6842">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM6842'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM6842"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/kondtir@gmail.com' methods='l'>Tirumaleswar Reddy.K</a> (kondtir@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL112901" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP112901">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM112901'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM112901"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/bernard.aboba@gmail.com' methods='t'>Dr. Bernard D. Aboba</a> (bernard.aboba@gmail.com) t</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL12620" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP12620">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM12620'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM12620"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/dave@cridland.net' methods='l'>Dave Cridland</a> (dave@cridland.net) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL105982" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP105982">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM105982'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM105982"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/loganaden@gmail.com' methods='l'>Loganaden Velvindron</a> (loganaden@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL122416" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP122416">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM122416'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM122416"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/xufeng.liu.ietf@gmail.com' methods='lt'>Xufeng Liu</a> (xufeng.liu.ietf@gmail.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL116241" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP116241">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM116241'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM116241"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/calle@tail-f.com' methods='lt'>Carl Moberg</a> (calle@tail-f.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL119081" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP119081">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM119081'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM119081"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/chopps@chopps.org' methods='lt'>Christian Hopps</a> (chopps@chopps.org) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL22933" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP22933">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM22933'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM22933"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/martin.thomson@gmail.com' methods='l'>Martin Thomson</a> (martin.thomson@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL107131" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP107131">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM107131'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM107131"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/ek.ietf@gmail.com' methods='l'>Erik Kline</a> (ek.ietf@gmail.com) l</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL108992" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP108992">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM108992'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM108992"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/mbj@tail-f.com' methods='lt'>Martin Björklund</a> (mbj@tail-f.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL107965" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP107965">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM107965'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM107965"></td></tr><tr><td style='text-align: right;'><a target='_blank' href='https://datatracker.ietf.org/person/rrahman@cisco.com' methods='lt'>Reshad Rahman</a> (rrahman@cisco.com) lt</td><td><input type="range" min="1" max="6" value="1" class="slider" style="width:25%;"  id="SL106444" onClick="updateSliderLabels();">&nbsp;<span style="width:10%;display: inline-block;"  id="SP106444">Undefined</span><button style="width: 60px; height: 25px;font-size:9;" onClick="e=document.getElementById('COM106444'); e.style.visibility = e.style.visibility=='hidden' ? 'visible' : 'hidden';">Comment</button>&nbsp;<input type="text" style="width: 50%; visibility:hidden;" id="COM106444"></td></tr>
+
+ </table>
+
+<form autocomplete="off">
+	<br> (Optional) Please input an (optional) comma separated list of suitable reviewers missing from above (you can write names and use autocomplete) <br> <textarea id="additionalReviewers" rows="2" style="width:1000px;"></textarea>
+<br> 
+<br>  Please input an (optional) comma separated list of <strong>suitable</strong> cross-area reviewers that are missing from above (you can write names and use autocomplete) <br> <textarea id="additionalCrossAreaReviewers" rows="2" style="width:1000px;"></textarea>
+<br><br> 
+
+</form>
+
+(Optional) What is your relation to this draft?
+<br>
+<input type="checkbox" id="roleAreaChair">
+<label for="roleAreaChair"> I am the area director.</label><br>
+<input type="checkbox" id="roleWGChair">
+<label for="roleWGChair"> I am the working group chair.</label><br>
+<input type="checkbox" id="roleWGAuthor">
+<label for="roleWGAuthor"> I am a draft author in the working group.</label><br>
+<input type="checkbox" id="roleWGReviewer">
+<label for="roleWGReviewer"> I am a draft reviewer in the working group.</label><br>
+<input type="checkbox" id="roleDirectReviewer">
+<label for="roleDirectReviewer"> I have submitted a directorate review for this draft.</label><br>
+<input type="checkbox" id="roleCommenter">
+<label for="roleCommenter"> I have participated in discussions about this draft.</label><br>
+<input type="checkbox" id="roleOther" onchange="e = document.getElementById(&#39;roleOtherText&#39;); e.style.visibility = e.style.visibility==&#39;hidden&#39; ? &#39;visible&#39; : &#39;hidden&#39;;">
+<label for="roleOther"> Other (specify) </label>&nbsp;<input type="text" style="width: 50%; visibility: hidden;" id="roleOtherText">
+
+<br>
+<br> (Optional) Any other comments: <br> <textarea id="othercomments" cols="80" rows="5"></textarea>
+<br><br>
+
+<button class="savebutton" type="button" onclick="saveAnnotations();">Save annotations and close</button>
+        
+
+
+
+<script>
+var client = new XMLHttpRequest();
+var candidates = [];
+client.open('GET', 'http://' + window.location.host +  '/fetchCandidates');
+client.onreadystatechange = function() {
+  if(client.readyState == 4){    
+	var elems = client.responseText.split(";");
+	for(i =0; i < elems.length; i++){
+	  candidates.push(elems[i].trim().replaceAll("'","").replaceAll('"',''));	  
+	}
+  }
+}
+client.send();
+  
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+	  console.log(val);
+	  if (val.includes(",")){
+	     var elems = val.split(",");
+		 val = elems[elems.length - 1].trim();
+	  }
+	  console.log(val);
+	  console.log("----");
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+	  a.setAttribute("style","overflow:visible;");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/	  
+	  string_to_look_for = val.toUpperCase();
+	  if(string_to_look_for.length < 3)
+		return;
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+		string_to_search = arr[i].toUpperCase();		
+        if (string_to_search.includes(string_to_look_for)) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+		  var found_ind = string_to_search.indexOf(string_to_look_for);		  
+		  var before_match = arr[i].substr(0,found_ind);
+		  var match = arr[i].substr(found_ind, string_to_look_for.length);
+		  if(found_ind + string_to_look_for.length >= string_to_search - 1){
+		    var after_match = ""
+		  } else {
+		    var after_match = arr[i].substr(found_ind + string_to_look_for.length, string_to_search.length - found_ind - string_to_look_for.length);
+		  }
+		  
+		  b.innerHTML = before_match;
+		  b.innerHTML += "<strong>" + match + "</strong>";
+		  b.innerHTML += after_match;
+          /*b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);*/
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+		      //insert the value for the autocomplete text field:*/
+			  if(!inp.value.includes(",")){			    
+			    inp.value = this.getElementsByTagName("input")[0].value;
+			  } else {
+			    comma_index = inp.value.lastIndexOf(",");
+                inp.value = inp.value.substr(0, comma_index) + ", " + this.getElementsByTagName("input")[0].value;
+			  }			  
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+	  if(e.keyCode == 9){
+	      this.focus();
+		  e.preventDefault();
+	  }
+      if (e.keyCode == 40 || e.keyCode == 9) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+autocomplete(document.getElementById("additionalReviewers"), candidates);
+autocomplete(document.getElementById("additionalCrossAreaReviewers"), candidates);
+
+</script>
+
+
+<script>
+let this_draft_name = 'draft-ietf-netconf-yang-push';
+
+var num2label = {
+        1 : "Undefined",
+        2: "Not suitable",
+        3: "Below average",
+        4: "Average",
+        5: "Above average",
+        6: "Very suitable"
+}
+updateSliderLabels = function(){
+  sliders = document.getElementsByClassName("slider");
+  for(var i=0;i<sliders.length;i++){    
+    corresponding_span_id = sliders[i].id.toString().replace("SL", "SP");  
+    corresponding_span = document.getElementById(corresponding_span_id);
+    corresponding_span.textContent = num2label[sliders[i].value]; 
+    console.log(corresponding_span.id);
+  }
+}
+
+function getCookie(cname) {
+  try{
+	  console.log(cname);
+	  let name = cname + "=";
+	  console.log(name);
+	  let decodedCookie = decodeURIComponent(document.cookie);
+	  console.log(decodedCookie);
+	  let ca = decodedCookie.split(';');
+	  console.log(ca);
+	  for(let i = 0; i <ca.length; i++) {
+	    let c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+              console.log("Returning substring" + c.substring(name.length, c.length));
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  console.log("Out of loop returning nothing");
+	  return "";
+  } catch (error){
+	  console.log("Error when accessing cookie with finished drafts.");
+    return "";
+  }
+}
+
+
+
+
+function setCookie(cname, cvalue, exdays) {
+  
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  try{document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";} catch(e){} 
+}
+
+
+
+processResponse = function(r){
+  
+  received_data = JSON.parse(r);
+  if(!("success" in received_data) || received_data["success"] != "yes"){
+	alert("An error occured when saving your response. It was logged. We will look into it as soon as possible.");
+  } 
+  if (received_data["success"] == "yes"){
+	  alert("Saving was successful! This tab will now close.");
+	  let c = getCookie("drafts-complete");
+	  if (c != ""){
+	    c = c + "<SEP>";
+	  }
+	  let new_c = c +  this_draft_name;
+	  setCookie("drafts-complete", new_c, 30);
+	  window.close()
+  } 
+  
+}
+
+saveAnnotations = function(){
+  sliders = document.getElementsByClassName("slider");
+  var undef_exists = false;
+  for(var i=0; i<sliders.length;i++){
+    if(sliders[i].value == 1){
+	  undef_exists = true;
+	  break;
+	}
+  }
+  /*if(undef_exists){
+    if(!confirm('You still have some candidates labeled as "undefined", are you sure you want to save?')){
+	  return;
+	}
+  }
+  */
+  
+  var ids = [];
+  var names = [];
+  var scores = [];
+  var comments = [];
+  
+  for(var i=0; i<sliders.length;i++){
+    id = sliders[i].id;
+	score = sliders[i].value;
+	comment = document.getElementById(id.replace("SL","COM")).value;	
+	name = sliders[i].parentElement.parentElement.firstChild.lastChild.textContent.replace("(", "").replace(")", "");	
+    
+	ids.push(id);
+	scores.push(score);
+	names.push(name);
+	comments.push(comment);
+
+  }  
+  
+  let un = "";
+  try { un = localStorage.getItem("uname"); } catch (e) {}
+  var data = { 
+      draft_name : this_draft_name,  
+      id_list : ids,
+	  name_list : names,
+	  score_list : scores,
+	  comment_list: comments,
+	  additionalReviewers : document.getElementById('additionalReviewers').value, 
+          additionalCrossAreaReviewers : document.getElementById('additionalCrossAreaReviewers').value, 	  
+	  roleAreaChair : document.getElementById('roleAreaChair').checked,  
+	  roleWGChair : document.getElementById('roleWGChair').checked,  
+	  roleWGAuthor : document.getElementById('roleWGAuthor').checked,
+	  roleWGReviewer : document.getElementById('roleWGReviewer').checked,  	  
+	  roleDirectReviewer : document.getElementById('roleDirectReviewer').checked,  	  
+	  roleCommenter : document.getElementById('roleCommenter').checked,  	  
+	  roleOther : document.getElementById('roleOther').checked,  
+	  roleOtherText : document.getElementById('roleOtherText').value,   	  
+	  othercomments : document.getElementById('othercomments').value,
+	  username: un
+  };
+  
+
+  var jsondata = JSON.stringify(data);
+  var jsondata_urlencoded = encodeURIComponent(jsondata);
+  
+  //alert("Everything seems ok");
+  //alert(JSON.stringify(data));
+  // send to server
+  
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://" + window.location.host +  "/saveLabels?jsondata=" + jsondata_urlencoded);
+  //xhr.setRequestHeader("Accept", "application/json");
+  //xhr.setRequestHeader("Content-Type", "application/json");  
+  xhr.onload = () => processResponse(xhr.responseText);
+  xhr.onerror= () => alert("There was an error communicating with the server storing the labels.");
+  xhr.send(null);
+    
+  
+}
+</script>
+
+
+<div id="torrent-scanner-popup" style="display: none;"></div></body></html>
