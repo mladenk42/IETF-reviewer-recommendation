@@ -1,0 +1,484 @@
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap.css">
+<title>IETF draft reviewer suggestion tool</title>
+<style>
+.button-71 {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<script languge = 'javascript'>
+var moronic_guid = Math.ceil(Math.random() * 10000000);
+ 
+function log_to_server(){
+	 console.log("Called logging");
+     data = "";
+	 
+	
+	 
+	 data += moronic_guid.toString() + ";";
+	 data += document.getElementById("draft").value + ";";
+	 data += document.getElementById("area_sel").value + ";";
+	 data += document.getElementById("compReviewers").value + ";"
+	 
+	 elems = document.getElementsByClassName("candfeedback");
+	 for (let i = 0; i < elems.length; i++) {
+	   e = elems[i];
+	   data += e.name + ":" + e.value + ";";
+	 }
+     data += document.getElementById("additionalReviewers").value + ";";
+	 data += document.getElementById("otherComments").value + ";";
+     data += model_id + ";"
+    client.open('GET', '/log?data=' + data);
+    //client.onreadystatechange = function() {
+    //if(client.readyState == 4){
+      //var results_html = client.responseText
+      //console.log(results_html)  
+	  //res_paragraph = document.getElementById("result_list");
+	  //res_paragraph.innerHTML = results_html.substring(1, results_html.length-1);
+    //}
+	//}
+	client.send();
+}
+
+
+</script>
+
+
+
+<script languge = 'javascript'>
+
+var model_id = Math.random() < 0.5 ? "LDA" : "TFIDF";
+
+
+function search(){
+
+var client = new XMLHttpRequest();
+//client.open('GET', 'http://' + window.location.host +  '/fetchCandidates');
+//var draft_name = 'draft-zia-route'
+
+
+draft_name = document.getElementById("draft").value
+
+search_mode = document.getElementById("mode").value
+
+if (search_mode == "std"){
+  client.open('GET', '/search?draft_name=' + draft_name + "&model=" + model_id);
+  
+}
+else if (search_mode == "area"){
+  desired_area = document.getElementById("area_sel").value;
+  client.open('GET', '/searchArea?draft_name=' + draft_name + "&model=" + model_id + "&area=" + desired_area);
+  
+}
+else if (search_mode == "comp"){
+  current_revs = document.getElementById("compReviewers").value;
+  client.open('GET', '/searchComp?draft_name=' + draft_name + "&model=" + model_id + "&current=" + current_revs);
+   
+}
+
+
+
+// some ids for testing: 117099, 122623,  1234840]
+client.onreadystatechange = function() {
+  if(client.readyState == 4){
+    var results_html = client.responseText
+    console.log(results_html)
+	res_paragraph = document.getElementById("result_list");
+	res_paragraph.innerHTML = results_html.substring(1, results_html.length-1);
+  }
+}
+client.send();
+
+}
+
+
+
+
+function modeChange(){
+  //console.log("Function called");
+  sel = document.getElementById("mode");
+  area_sel = document.getElementById("area_sel")
+  comp_lab = document.getElementById("comp_lab")
+  area_lab = document.getElementById("area_lab")
+  comp_textbox = document.getElementById("compReviewers");
+  if (sel.value == "std"){
+     area_sel.style.display = "none";
+	 comp_textbox.style.display = "none";
+	 area_lab.style.display = "none";
+	 comp_lab.style.display = "none";
+  } else if (sel.value == "area") {
+	 area_sel.style.display = "inline";
+	 comp_textbox.style.display = "none";
+	 area_lab.style.display = "inline";
+	 comp_lab.style.display = "none";
+  } else if (sel.value == "comp"){
+	 area_sel.style.display = "none";
+	 comp_textbox.style.display = "inline";
+	 area_lab.style.display = "none";
+	 comp_lab.style.display = "inline";
+  }  
+}
+
+function usefulChange(){
+  sel = document.getElementById("usefuldrop");
+  if(sel.value == "no" || sel.value == "partially"){
+    vis_setting = "visible";
+  } else {
+    vis_setting = "hidden";
+  }
+  for(i = 1; i <= 5; i++){
+    document.getElementById("comspan" + i.toString()).style.visibility = vis_setting;
+  }   
+}
+
+// table style for every other table row if needed
+//tr:nth-child(even) {
+//  background-color: #D6EEEE;
+//}
+ 
+</script>
+
+
+<div style="width: 45%; margin: auto;" >
+<br>
+<h1>IETF draft reviewer suggestion tool <br> </h1> <h2>(experimental A/B test version)</h2>
+<br>
+<p>
+<label for="draft" style="font-size: 1.5em;"><b>Draft to consider:</b></label>
+<input type="text" id="draft" name="draft" style="width: 300px; font-size: 1.5em; height: 25px;" value="draft-"> &nbsp;
+<button type="button" class="button-71" onclick="search();">Search</button> 
+<br>
+</p>
+
+
+<label for="Mode" >Mode:</label>
+<select name="mode" id="mode" onchange = "modeChange();">  
+  <option value="std">Default</option>
+  <option value="area">Focus specific area</option>
+  <option value="comp">Focus complementary expertise</option>  
+</select>&nbsp;
+
+
+
+
+<p>
+<label for="area_sel" id = "area_lab" style="display:none;">Area to focus:</label>
+
+<select name="area_sel" id="area_sel" style="display:none;">
+  
+  <option value="art">Applications and Real Time Area (art)</option>
+  <option value="gen">General Area (gen)</option>
+  <option value="int">Internet Area (int)</option>
+  <option value="ops">Operations and Management Area (ops)</option>
+  <option value="rtg">Routing area (rtg)</option>
+  <option value="sec">Security Area (sec)</option>
+</select>
+
+<label for="comp_textbox" id = "comp_lab"  style="display:none;">Current set of reviwers (comma separated, use autocomplete):</label>
+<input type="text" id="compReviewers" name="comp_textbox"  style="display:none; width: 675px;"><br>
+</p>
+<hr>
+<b>Results:</b><br><br>
+  <p name="result_list" id="result_list">
+
+  </p>
+  
+
+<p>
+<label for="other"><b>(Optional)</b> Other comments:</label>
+<input type="text" id="otherComments" name="missing" style="width:675px;">&nbsp; &nbsp;&nbsp;
+<label for="missing"><b>(Optional)</b> List of missing results:</label>
+<input type="text" id="additionalReviewers" name="missing" style="width:675px;"> 
+<br> <button type="button" onclick="log_to_server(); today = new Date(); document.getElementById('confFeedback').textContent=' Feedback submitted, thanks! (' + today.toLocaleString()  +  ')'">Submit feedback</button><span id="confFeedback"></span> 
+</p>
+<hr>
+<b>General feedback:</b>
+If you have general feedback regarding this tool or improving the reviewing process (particularly the cross-area review aspect), please feel free to let us know using <a href = "https://forms.gle/6N5bPS9xLsyifiE97"> this google form</a> (it only has two questions, and shouldn't take more than a few minutes).
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</div>
+
+<style>
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  /*top: 100%;
+  left: 0;
+  right: 0;*/
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+</style>
+
+<script>
+var client = new XMLHttpRequest();
+var candidates = [];
+//client.open('GET', 'http://' + window.location.host +  '/fetchCandidates');
+client.open('GET',  "/fetchCandidates");
+console.log("sent the request");
+client.onreadystatechange = function() {
+  if(client.readyState == 4){    
+	var elems = client.responseText.split(";");
+	for(i =0; i < elems.length; i++){
+	  candidates.push(elems[i].trim().replaceAll("'","").replaceAll('"',''));	  
+	}
+	console.log("Done pushing")
+  }
+}
+client.send();
+
+var client_drafts = new XMLHttpRequest();
+var candidates_drafts = [];
+//client.open('GET', 'http://' + window.location.host +  '/fetchCandidates');
+client_drafts.open('GET', "/fetchDraftCandidates");
+console.log("sent the request for drafts list");
+client_drafts.onreadystatechange = function() {
+  if(client_drafts.readyState == 4){    
+	var elems = client_drafts.responseText.split(";");
+	for(i =0; i < elems.length; i++){
+	  candidates_drafts.push(elems[i].trim().replaceAll("'","").replaceAll('"',''));	  
+	}
+	console.log("Drafts:");
+	console.log(candidates_drafts);
+	console.log("Done pushing for drafts.");
+  }
+}
+client_drafts.send();
+
+  
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+	  console.log(val);
+	  if (val.includes(",")){
+	     var elems = val.split(",");
+		 val = elems[elems.length - 1].trim();
+	  }
+	  console.log(val);
+	  console.log("----");
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+	  a.setAttribute("style","overflow:visible;");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/	  
+	  string_to_look_for = val.toUpperCase();	  
+	  
+	  if(string_to_look_for.length < 3)
+		return;
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+		string_to_search = arr[i].toUpperCase();		
+        if (string_to_search.includes(string_to_look_for)) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+		  var found_ind = string_to_search.indexOf(string_to_look_for);		  
+		  var before_match = arr[i].substr(0,found_ind);
+		  var match = arr[i].substr(found_ind, string_to_look_for.length);
+		  if(found_ind + string_to_look_for.length >= string_to_search - 1){
+		    var after_match = ""
+		  } else {
+		    var after_match = arr[i].substr(found_ind + string_to_look_for.length, string_to_search.length - found_ind - string_to_look_for.length);
+		  }
+		  
+		  b.innerHTML = before_match;
+		  b.innerHTML += "<strong>" + match + "</strong>";
+		  b.innerHTML += after_match;
+          /*b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);*/
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+		      //insert the value for the autocomplete text field:*/
+			  if(!inp.value.includes(",")){			    
+			    inp.value = this.getElementsByTagName("input")[0].value;
+			  } else {
+			    comma_index = inp.value.lastIndexOf(",");
+                inp.value = inp.value.substr(0, comma_index) + ", " + this.getElementsByTagName("input")[0].value;
+			  }			  
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+	  if(e.keyCode == 9){
+	      this.focus();
+		  e.preventDefault();
+	  }
+      if (e.keyCode == 40 || e.keyCode == 9) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+autocomplete(document.getElementById("additionalReviewers"), candidates);
+autocomplete(document.getElementById("compReviewers"), candidates);
+autocomplete(document.getElementById("draft"), candidates_drafts);
+
+
+dt = document.getElementById("draft");
+const end = dt.value.length;
+dt.setSelectionRange(end,end);
+dt.focus();
+
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+
+
+
+</html>
